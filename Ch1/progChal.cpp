@@ -2,20 +2,27 @@
 //Chapter 2 Programming Challenges
 
 #include <iostream>
+#include <iomanip>
 
 using namespace std;
 
 void sumTwoNum();
 void salesPrediction();
 void salesTax();
+void restaurantBill( double x);
 
 int main()	{
 	//1. Sum of Two Numbers
 	sumTwoNum();
-	//2. 
+	//2. Sales Prediction
 	salesPrediction();
-	//3. 
+	//3. Sales Tax
 	salesTax();
+	//4. Restaurant Bill
+	restaurantBill( 44.50 );
+	
+	
+	
 }
 /* 	Write a program that stores the integers 62 and 99 in variables	
 	and stores the sum of these two in a variable named total 		*/
@@ -44,4 +51,16 @@ void salesTax()	{
 	double stateSalesTax = .04;
 	double total = (purch * countySalesTax ) + ( purch * stateSalesTax ) ;
 	cout << "The total sales tax on a $52 purchase is: " << total << "\n\n";
+}
+
+/*	Write a program that computes the tax and tip on a restaurant bill for a 
+	patron with a $44.50 meal charge.  */ 
+void restaurantBill( double x )	{
+	double tax = .0675 * x;
+	double tip = .15 * x;
+	double total = x + tax + tip;
+	cout << "Meal Cost: $" << setprecision(2) << fixed << x << "\n";
+	cout << "Tax Amount: $" << setprecision(2) << fixed << tax << "\n";
+	cout << "Tip Amount: $" << setprecision(2) << fixed << tip << "\n";
+	cout << "Grand Total: $" << setprecision(2) << fixed << total << "\n";
 }
