@@ -20,6 +20,7 @@ int main()	{
 	salesTax();
 	//4. Restaurant Bill
 	restaurantBill( 44.50 );
+	//
 	
 	
 	
@@ -64,3 +65,5 @@ void restaurantBill( double x )	{
 	cout << "Tip Amount: $" << setprecision(2) << fixed << tip << "\n";
 	cout << "Grand Total: $" << setprecision(2) << fixed << total << "\n";
 }
+
+/*	 */

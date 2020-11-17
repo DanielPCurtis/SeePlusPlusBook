@@ -13,7 +13,12 @@ void printMenu( )	{
 	
 	cout << "Enter your choice: ";
 	cin >> choice;
-	cout << choice << "\n";
+	if(choice < 1 || choice > 4)	{
+		cout << "Error: Invalid Value\n";
+	}	else	{
+		cout << choice << "\n";
+	}
+		
 	return;
 }
 
