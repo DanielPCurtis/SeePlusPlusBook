@@ -3,15 +3,19 @@
 
 #include <iostream>
 #include <iomanip>
+#include <fstream>
 
 using namespace std;
 
 void sumTwoNum();
 void salesPrediction();
 void salesTax();
-void restaurantBill( double x);
+void restaurantBill( double x );
+void stadiumSeating();
+void saveNum();
 
 int main()	{
+	/////////Chapter 2////////
 	//1. Sum of Two Numbers
 	sumTwoNum();
 	//2. Sales Prediction
@@ -20,7 +24,11 @@ int main()	{
 	salesTax();
 	//4. Restaurant Bill
 	restaurantBill( 44.50 );
-	//
+	/////////Chapter 3////////
+	//2. Stadium Seating
+	stadiumSeating();
+	//21. Saving Numbers to a File
+	saveNum();
 	
 	
 	
@@ -66,4 +74,46 @@ void restaurantBill( double x )	{
 	cout << "Grand Total: $" << setprecision(2) << fixed << total << "\n";
 }
 
-/*	 */
+/*	Wrte 2 programs:
+	Write a program that asks the user to enter five numbers. Create a file and save all five numbers
+	Write a program that opens the file created reads the five numbers and displays them, 
+	then display and calculate sum */
+void enterFiveNumbers()	{
+	ofstream outputFile;
+	outputFile.open( "fiveNum.txt" );
+	int a,b,c,d,e;
+	
+	cout << "Enter five numbers: ";
+	cin >> a >> b >> c >> d >> e;
+	outputFile  << a << endl;
+	outputFile  << b << endl;
+	outputFile  << c << endl;
+	outputFile  << d << endl;
+	outputFile  << e << endl;
+	outputFile.close();
+	return;
+}
+
+void printFiveNumbers()	{
+	ifstream inputFile;
+	inputFile.open( "fiveNum.txt" );
+	int num;
+	
+	inputFile >> num;
+	cout << num <<"\n";
+	inputFile >> num;
+	cout << num <<"\n";
+	inputFile >> num;
+	cout << num <<"\n";
+	inputFile >> num;
+	cout << num <<"\n";
+	inputFile >> num;
+	cout << num <<"\n";
+	inputFile.close();
+	return;
+}
+	
+void saveNum()	{
+	enterFiveNumbers();
+	printFiveNumbers();
+}
