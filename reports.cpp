@@ -3,6 +3,8 @@
 using namespace std;
 
 void printReport()	{
+	int choice;
+	
 	cout << "Serendipity Booksellers\n";
 	cout << "Reports\n\n";
 	
@@ -15,7 +17,13 @@ void printReport()	{
 	cout << "7. Return to the Main Menu\n\n";
 	
 	cout << "Enter Your Choice: \n";
+	cin >> choice;
 	
+	if(choice < 1 || choice > 7)	{
+		cout << "Error: Invalid Value\n";
+	}	else	{
+		cout << choice << "\n";
+	}
 }
 
 int main()	{

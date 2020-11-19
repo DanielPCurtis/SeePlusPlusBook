@@ -3,6 +3,8 @@
 using namespace std;
 
 void printInventoryDB()	{
+	int choice;
+	
 	cout << "Serendipity Booksellers\n";
 	cout << "Inventory Database\n\n";
 	
@@ -13,6 +15,13 @@ void printInventoryDB()	{
 	cout << "5. Return to the Main Menu\n\n";
 	
 	cout << "Enter Your Choice: \n";
+	cin >> choice;
+	
+	if(choice < 1 || choice > 5)	{
+		cout << "Error: Invalid Value\n";
+	}	else	{
+		cout << choice << "\n";
+	}
 }
 
 int main()	{

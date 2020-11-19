@@ -153,8 +153,8 @@ void interestEarned()	{
 	cout << "Principal: \t\t$" << principal << endl;
 	cout << "Interest: \t\t$" << interestTotal << endl;
 	cout << "Amount in Savings: \t$" << amt << endl;
-	
 }
+
 /*	Wrte 2 programs:
 	Write a program that asks the user to enter five numbers. Create a file and save all five numbers
 	Write a program that opens the file created reads the five numbers and displays them, 
