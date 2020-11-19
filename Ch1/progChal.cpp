@@ -17,6 +17,9 @@ void fiveTestAvg();
 void saveNum();
 void celsiusToFarenheit( double degrees);
 void interestEarned();
+void timeCalculator();
+void geometryCalculator();
+
 
 int main()	{
 	/////////Chapter 2////////
@@ -36,11 +39,13 @@ int main()	{
 	//10. Celsius to Farenheit
 	//celsiusToFarenheit( 100.0 );
 	//16. Interest Earned
-	interestEarned();
-	//17. Monthly Payments
+	//interestEarned();
 	//21. Saving Numbers to a File
 	//saveNum();
-	
+	/////////Chapter 4////////
+	//7. Time Calculator
+	//timeCalculator();
+	geometryCalculator();
 	
 	
 }
@@ -175,7 +180,6 @@ void enterFiveNumbers()	{
 	cout << "\nFile has been created and numbers added...";
 	return;
 }
-
 void printFiveNumbers()	{
 	ifstream inputFile;
 	inputFile.open( "fiveNum.txt" );
@@ -193,9 +197,102 @@ void printFiveNumbers()	{
 	cout << num <<"\n";
 	inputFile.close();
 	return;
-}
-	
+}	
 void saveNum()	{
 	enterFiveNumbers();
 	printFiveNumbers();
+}
+
+/*	Write a program that asks the user to enter seconds and then calculate how many days, hours, and minutes	*/
+void timeCalculator()	{
+	long int totalSeconds;
+	bool boo = false;
+	cout << "Enter total number of seconds: ";
+	cin >> totalSeconds;
+	long int grandTotal=totalSeconds;
+	cout << "\nThere is ";
+	if( totalSeconds < 60 )	{
+		cout << "There is " << totalSeconds << " seconds";
+	}
+	while( totalSeconds > 60 ){
+		if( boo )	cout << " and ";
+		if( totalSeconds >= 60 && totalSeconds < 3600 )	{
+			long int help = totalSeconds/60;
+			cout << help << " minutes ";
+			totalSeconds = totalSeconds%60;
+			boo=true;
+		}
+		else if( totalSeconds >= 3600 && totalSeconds < 86400 )	{
+			long int help = totalSeconds/3600;
+			cout << help << " hours";
+			totalSeconds = totalSeconds%3600;
+			boo=true;
+		}
+		else	{
+			long int help = totalSeconds/86400;
+			cout << help << " day(s)";
+			totalSeconds = totalSeconds%86400;
+			boo=true;
+		}
+		
+	}
+	cout << " and " << totalSeconds << " seconds in " << grandTotal << " seconds"  << endl;
+}
+void areaOfCircle()	{
+	double radius;
+	cout << "\nEnter the radius of the circle: ";
+	cin >> radius;
+	double area = M_PI * pow(radius, 2.0);
+	cout << "\nThe area for that shit is " << area << endl;
+}
+void areaOfRectangle()	{
+	double length, width;
+	cout << "\nEnter the length of the rectangle: ";
+	cin >> length;
+	cout << "\nEnter the width of the rectangle: ";
+	cin >> width;
+	double area = length * width;
+	cout << "\nThe area for that shit is " << area << endl;
+}
+void areaOfTriangle()	{
+	double base, height;
+	cout << "\nEnter the base of the triangle: ";
+	cin >> base;
+	cout << "\nEnter the height of the triangle: ";
+	cin >> height;
+	double area = base * (height / 2.0);
+	cout << "\nThe area for that shit is " << area << endl;
+}
+void geometryCalculator()	{
+	int choice;
+	cout << "Starting Geometry Calculator...\n\n";
+	
+	cout << "\t\t***Geometry Calculator***\t\t\n";
+	cout << "1. Calculate the Area of a Circle.\n";
+	cout << "2. Calculate the Area of a Rectangle.\n";
+	cout << "3. Calculate the Area of a Triangle.\n";
+	cout << "4. Quit.\n"; 
+	cout << "Enter your choice (1-4): ";
+	cin >> choice;
+	if( choice < 1 || choice > 4 )	{
+		cout << "Error: Invalid choice dummy\n";
+		return;
+	}
+	switch(choice){
+		case 1:
+			areaOfCircle();
+			break;
+		case 2:
+			areaOfRectangle();
+			break;
+		case 3:
+			areaOfTriangle();
+			break;
+		case 4:
+			exit(0);
+			break;
+		default: 
+			break;	
+	}
+	return;
 }
