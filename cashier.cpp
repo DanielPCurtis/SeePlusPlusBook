@@ -31,7 +31,7 @@ void printReceipt()	{
 	cout << "\t\tTotal\t\t\t$" << finalPrice << endl;
 	
 	cout << "Thank You for Shopping at Serendipity!\n";
-	
+	return;
 }
 
 int main()	{

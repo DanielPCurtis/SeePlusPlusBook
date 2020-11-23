@@ -13,10 +13,22 @@ void printMenu( )	{
 	
 	cout << "Enter your choice: ";
 	cin >> choice;
-	if(choice < 1 || choice > 4)	{
-		cout << "Error: Invalid Value\n";
-	}	else	{
-		cout << choice << "\n";
+	while(choice < 1 || choice > 4)	{
+		cout << "Error: Please enter a number in the range 1-4\n";
+	}	
+	switch(choice)	{
+		case 1: 
+			cout << "\nYou selected item 1\n";
+			break;
+		case 2: 
+			cout << "\nYou selected item 2\n";
+			break;
+		case 3: 
+			cout << "\nYou selected item 3\n";
+			break;
+		case 4: 
+			cout << "\nYou selected item 4\n";
+			break;
 	}
 		
 	return;

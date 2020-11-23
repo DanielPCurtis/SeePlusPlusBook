@@ -15,6 +15,7 @@ void printBookInfo()	{
 	cout << "Wholesale Cost: \n";
 	cout << "Retail Price: \n";
 	
+	return;
 }
 
 int main()	{
